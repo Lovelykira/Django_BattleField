@@ -1,0 +1,14 @@
+#main{
+text-align: center;
+}
+
+p{
+font-size:11px;
+font-style: italic;
+}
+
+#log-container{
+height: 400px;
+overflow: auto;
+border: 1px solid blue;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    {%load staticfiles%}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css' %}" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="main">
+                    <h2>Welcome to War Simulator!</h2>
+                    All you need to do is input the number of armies, that would fight `till the only one left. <br>
+                    Everything else the <b>God of randomness</b> will do for you.<br>
+                    <br>
+                    <form action = "/battle" method="post">{% csrf_token %}
+                        Input num armies:
+                        <input name="num_armies" type="text">
+                        <button type = "submit">submit</button>
+                    </form>
+                    <p>Please notice that if you input big number the process of calculating can take a long time</p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </body>
+</html>

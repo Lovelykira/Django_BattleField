@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    {%load staticfiles%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                {%for army in alive_armies_log%}
+                    {{army}}<br>
+                {%endfor%}
+            </div>
+            <div class="col-md-1">
+                <form action = "/battle/step" method="post">{% csrf_token %}
+                    <button type = "submit">Next step</button>
+                </form>
+            </div>
+            <div class="col-md-8" id="log-container">
+                    {%for str in log%}
+                        {{str}}<br>
+                    {%endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
